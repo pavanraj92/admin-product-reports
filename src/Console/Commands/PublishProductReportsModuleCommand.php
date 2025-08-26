@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\File;
 
 class PublishProductReportsModuleCommand extends Command
 {
-    protected $signature = 'product_reports:publish {--force : Force overwrite existing files}';
-    protected $description = 'Publish Product Reports module files with proper namespace transformation';
+    protected $signature = 'reports:publish {--force : Force overwrite existing files}';
+    protected $description = 'Publish Reports module files with proper namespace transformation';
 
     public function handle()
     {
-        $this->info('Publishing Product Reports module files...');
+        $this->info('Publishing Reports module files...');
 
         // Check if module directory exists
         $moduleDir = base_path('Modules/Reports');
@@ -25,7 +25,7 @@ class PublishProductReportsModuleCommand extends Command
         
         // Publish other files
         $this->call('vendor:publish', [
-            '--tag' => 'product_report',
+            '--tag' => 'report',
             '--force' => $this->option('force')
         ]);
 
@@ -80,20 +80,6 @@ class PublishProductReportsModuleCommand extends Command
         // Apply transformations
         foreach ($namespaceTransforms as $search => $replace) {
             $content = str_replace($search, $replace, $content);
-        }
-
-        // Handle specific file types
-        if (str_contains($sourceFile, 'Controllers')) {
-            $content = str_replace(
-                'use admin\\products\\Models\\Order;',
-                'use Modules\\Products\\app\\Models\\Order;',
-                $content
-            );
-            $content = str_replace(
-                'use admin\\products\\Models\\Transaction;',
-                'use Modules\\Products\\app\\Models\\Transaction;',
-                $content
-            );
         }
 
         return $content;

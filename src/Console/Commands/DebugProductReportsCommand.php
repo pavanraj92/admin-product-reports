@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\File;
 
 class DebugProductReportsCommand extends Command
 {
-    protected $signature = 'product_reports:debug';
-    protected $description = 'Debug Products module routing and view resolution';
+    protected $signature = 'reports:debug';
+    protected $description = 'Debug Reports module routing and view resolution';
 
     public function handle()
-    { 
-        $this->info('🔍 Debugging Products Module...');
+    {
+        $this->info('🔍 Debugging Reports Module...');
 
         // Check route file loading
         $this->info("\n📍 Route Files:");

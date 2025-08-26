@@ -1,18 +1,10 @@
-# admin-product
+# Product Report
 
-This package allows you to perform CRUD operations for managing products in the admin panel.
+Generates insights and analytics for product performance and sales.
 
 ## Features
 
-- Add, edit, and delete products with details like name, price, brand, category, images, etc.
-- Upload multiple images per product
-- Assign categories, brands, and tags to products
-- Manage product inventory, pricing, and status
-- View and manage product orders, transactions, returns, and refunds
 - Generate sales and transaction reports
-- SEO metadata support (optional)
-- Searchable, paginated product listing
-- Soft-delete support for products
 
 ## Requirements
 
@@ -27,19 +19,19 @@ This package allows you to perform CRUD operations for managing products in the 
 "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/pavanraj92/admin-products.git"
+            "url": "https://github.com/pavanraj92/admin-product-reports.git"
         }
 ]
 ```
 
 ### 2. Require the package via Composer
     ```bash
-    composer require admin/products:@dev
+    composer require admin/product_reports:@dev
     ```
 
 ### 3. Publish assets
     ```bash
-    php artisan products:publish --force
+    php artisan reports:publish --force
     ```
 ---
 
