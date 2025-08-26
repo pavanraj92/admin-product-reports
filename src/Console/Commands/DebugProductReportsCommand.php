@@ -11,7 +11,7 @@ class DebugProductReportsCommand extends Command
     protected $description = 'Debug Products module routing and view resolution';
 
     public function handle()
-    {
+    { 
         $this->info('🔍 Debugging Products Module...');
 
         // Check route file loading
