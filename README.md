@@ -38,41 +38,12 @@ Generates insights and analytics for product performance and sales.
 
 ## Usage
 
-1. **Create**: Add a new product with all necessary details, assign categories, brands, tags, and upload images.
-2. **Read**: View products, orders, transactions, returns, and refunds in searchable, paginated tables.
-3. **Update**: Modify product data, images, inventory, pricing, and attributes.
-4. **Delete**: Soft-delete a product from the system.
-5. **Manage Orders**: View, update, and manage product orders.
-6. **Handle Returns/Refunds**: View and update return/refund requests.
-7. **Transactions**: Track and manage product-related transactions.
-8. **Reporting**: Generate and view sales and transaction reports.
+ **Reporting**: Generate and view sales and transaction reports.
 
 ## Admin Panel Routes
 
 | Method | Endpoint                                 | Description                              |
 | ------ | ---------------------------------------- | ---------------------------------------- |
-| GET    | /products                                | List all products                        |
-| POST   | /products                                | Create a new product                     |
-| GET    | /products/{product}                      | Get product details                      |
-| PUT    | /products/{product}                      | Update a product                         |
-| DELETE | /products/{product}                      | Delete a product                         |
-| GET    | /categories/get-children                 | Get child categories (AJAX)              |
-| GET    | /categories/subcategories/{id}           | Get subcategories for category           |
-| GET    | /categories/{category}/nested-subcategories | Get nested subcategories for category    |
-| GET    | /return_refunds                          | List all return/refund requests          |
-| GET    | /return_refunds/{return_refund}          | Show return/refund details               |
-| POST   | /return_refunds/updateStatus             | Update return/refund status              |
-| GET    | /orders                                  | List all orders                          |
-| POST   | /orders                                  | Create a new order                       |
-| GET    | /orders/{order}                          | Get order details                        |
-| PUT    | /orders/{order}                          | Update an order                          |
-| DELETE | /orders/{order}                          | Delete an order                          |
-| POST   | /orders/updateStatus                     | Update order status                      |
-| GET    | /transactions                            | List all transactions                    |
-| POST   | /transactions                            | Create a new transaction                 |
-| GET    | /transactions/{transaction}              | Get transaction details                  |
-| PUT    | /transactions/{transaction}              | Update a transaction                     |
-| DELETE | /transactions/{transaction}              | Delete a transaction                     |
 | GET    | /reports                                 | View sales and transaction reports       |
 
 ---
