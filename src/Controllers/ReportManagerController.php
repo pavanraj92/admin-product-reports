@@ -3,7 +3,7 @@
 namespace admin\product_reports\Controllers;
 
 use admin\products\Models\Order;
-use admin\products\Models\Transaction;
+use admin\product_transactions\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
