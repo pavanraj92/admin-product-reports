@@ -43,7 +43,7 @@ class ReportManagerController extends Controller
             // Breakdown by status
             $ordersByStatus = $orders->groupBy('status')->map->count();
 
-            return view('product::admin.index', compact(
+            return view('report::admin.index', compact(
                 'startDate',
                 'endDate',
                 'transactionCount',

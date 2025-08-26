@@ -15,13 +15,13 @@ class ProductReportServiceProvider extends ServiceProvider
         // Load routes, views, migrations from the package  
         $this->loadViewsFrom([
             base_path('Modules/Reports/resources/views'), // Published module views first
-            resource_path('views/admin/product_report'), // Published views second
+            resource_path('views/admin/report'), // Published views second
             __DIR__ . '/../resources/views'      // Package views as fallback
-        ], 'product_report');
+        ], 'report');
 
         // Also register module views with a specific namespace for explicit usage
         if (is_dir(base_path('Modules/Reports/resources/views'))) {
-            $this->loadViewsFrom(base_path('Modules/Reports/resources/views'), 'product-reports-module');
+            $this->loadViewsFrom(base_path('Modules/Reports/resources/views'), 'reports-module');
         }
 
         // Only publish automatically during package installation, not on every request
@@ -31,7 +31,7 @@ class ProductReportServiceProvider extends ServiceProvider
         // Standard publishing for non-PHP files
         $this->publishes([
             __DIR__ . '/../resources/views' => base_path('Modules/Reports/resources/views/'),
-        ], 'product_report');
+        ], 'report');
 
         $this->registerAdminRoutes();
     }
@@ -141,16 +141,6 @@ class ProductReportServiceProvider extends ServiceProvider
     protected function transformControllerNamespaces($content)
     {
         // Update use statements for models and requests
-        $content = str_replace(
-            'use admin\\products\\Models\\Order;',
-            'use Modules\\Products\\app\\Models\\Order;',
-            $content
-        );
-        $content = str_replace(
-            'use admin\\products\\Models\\Transaction;',
-            'use Modules\\Products\\app\\Models\\Transaction;',
-            $content
-        );
         return $content;
     }
 

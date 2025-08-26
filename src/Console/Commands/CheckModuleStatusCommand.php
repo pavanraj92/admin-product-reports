@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\File;
 
 class CheckModuleStatusCommand extends Command
 {
-    protected $signature = 'product_reports:status';
-    protected $description = 'Check if Products module files are being used';
+    protected $signature = 'reports:status';
+    protected $description = 'Check if Reports module files are being used';
 
     public function handle()
     {
@@ -63,7 +63,7 @@ class CheckModuleStatusCommand extends Command
         $composerFile = base_path('composer.json');
         if (File::exists($composerFile)) {
             $composer = json_decode(File::get($composerFile), true);
-            if (isset($composer['autoload']['psr-4']['Modules\\Products\\'])) {
+            if (isset($composer['autoload']['psr-4']['Modules\\Reports\\'])) {
                 $this->info("\n✅ Composer autoload: CONFIGURED");
             } else {
                 $this->error("\n❌ Composer autoload: NOT CONFIGURED");
@@ -71,8 +71,8 @@ class CheckModuleStatusCommand extends Command
         }
 
         $this->info("\n🎯 Summary:");
-        $this->info("Your Products module is properly published and should be working.");
-        $this->info("Any changes you make to files in Modules/Products/ will persist.");
-        $this->info("If you need to republish from the package, run: php artisan products:publish --force");
+        $this->info("Your Reports module is properly published and should be working.");
+        $this->info("Any changes you make to files in Modules/Reports/ will persist.");
+        $this->info("If you need to republish from the package, run: php artisan rep0orts:publish --force");
     }
 }
