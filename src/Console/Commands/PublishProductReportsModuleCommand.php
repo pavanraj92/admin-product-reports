@@ -82,6 +82,18 @@ class PublishProductReportsModuleCommand extends Command
             $content = str_replace($search, $replace, $content);
         }
 
+        if (str_contains($sourceFile, 'Controllers')) {
+            $content = str_replace(
+                'use admin\\products\\Models\\Order;',
+                'use Modules\\Products\\app\\Models\\Order;',
+                $content
+            );
+            $content = str_replace(
+                'use admin\\product_transactions\\Models\\Transaction;',
+                'use Modules\\Transactions\\app\\Models\\Transaction;',
+                $content
+            );
+        }
         return $content;
     }
 
